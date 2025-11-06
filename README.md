@@ -1,5 +1,3 @@
-# DOCK3_Protein_prep__no_layer_by_Alina
-
 Tutorial: Preparing a Protein and Running Blastermaster on Gimel2
 0) What this setup does
 Checks protein
