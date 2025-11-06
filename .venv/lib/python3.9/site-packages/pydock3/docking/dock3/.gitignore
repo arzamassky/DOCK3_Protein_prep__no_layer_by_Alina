@@ -1,0 +1,16 @@
+# dev environment
+.idea/
+
+#
+*.o
+.nfs*
+src/libfgz/libfgz64.a
+src/i386/dock32
+src/i386/dock32d
+src/i386/dock64
+src/i386/dock64d
+src/i386/*.disasm
+src/i386/*.oo
+src/i386/*.mod
+src/i386/*.moddep
+src/i386/pgprof.ccff/dock_prof64.ccff/*

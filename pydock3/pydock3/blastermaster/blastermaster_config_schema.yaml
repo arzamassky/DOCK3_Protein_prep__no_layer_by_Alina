@@ -1,0 +1,125 @@
+dock_files_generation:
+  receptor_protonation:
+    reduce_options: str()
+
+  thin_spheres_elec:
+    use: bool()
+    molecular_surface_density: num()
+    distance_to_surface: num()
+    penetration: num()
+    distance_to_ligand: num()
+
+  thin_spheres_desolv:
+    use: bool()
+    molecular_surface_density: num()
+    distance_to_surface: num()
+    penetration: num()
+    distance_to_ligand: num()
+
+  covalent:
+    use: bool()
+    residue_num: int()
+    residue_name: str()
+    residue_atoms: str()
+
+  # See below for schemas for optional parameters
+  box_generation: include('box_generation', required=False)
+
+  electrostatics_grid_gen: include('electrostatics_grid_gen', required=False)
+
+  desolv_grid_gen: include('desolv_grid_gen', required=False)
+
+  vdw_grid_gen: include('vdw_grid_gen', required=False)
+
+  low_dielectric_sphere_selection: include('low_dielectric_sphere_selection', required=False)
+
+  matching_spheres_generation: include('matching_spheres_generation', required=False)
+
+  molecular_surface_density: include('molecular_surface_density', required=False)
+
+# See below for indock schema. Eventually this should just be optional for some things. We largely don't change these numbers
+indock_file_generation: include('indock_file_generation', required=True)
+
+---
+molecular_surface_density: num(required=False)
+---
+box_generation:
+  margin: num(required=False)
+---
+electrostatics_grid_gen:
+  grid_size: num(required=False)
+  use_receptor_box: bool(required=False)
+---
+desolv_grid_gen:
+  other_radius: num(required=False)
+  probe_radius: num(required=False)
+  hydrogen_radius: num(required=False)
+  heavy_radius: num(required=False)
+---
+vdw_grid_gen:
+  grid_spacing: num(required=False)
+---
+low_dielectric_sphere_selection:
+  min_num_spheres: num(required=False)
+---
+matching_spheres_generation:
+  max_num_spheres: num(required=False)
+  gridsize: num(required=False)
+  tooclose: num(required=False)
+---
+indock_file_generation:
+  ligand_atom_file: str()
+  output_file_prefix: str()
+  match_method: int()
+  distance_tolerance: num()
+  match_goal: int()
+  distance_step: num()
+  distance_maximum: num()
+  timeout: num()
+  nodes_maximum: int()
+  nodes_minimum: int()
+  bump_maximum: num()
+  bump_rigid: num()
+  mol2_score_maximum: num()
+  chemical_matching: bool()
+  case_sensitive: bool()
+  atom_minimum: int()
+  atom_maximum: int()
+  number_save: int()
+  number_write: int()
+  flush_int: int()
+  check_clashes: bool()
+  do_premax: bool()
+  do_clusters: bool()
+  ligand_desolvation: str()
+  ligand_desolv_scale: num()
+  electrostatic_scale: num()
+  vdw_scale: num()
+  internal_scale: num()
+  per_atom_scores: bool()
+  dockovalent: bool()
+  bond_len: num()
+  bond_ang1: num()
+  bond_ang2: num()
+  len_range: num()
+  len_step: num()
+  ang1_range: num()
+  ang2_range: num()
+  ang1_step: num()
+  ang2_step: num()
+  minimize: bool()
+  sim_itmax: int()
+  sim_trnstep: num()
+  sim_rotstep: num()
+  sim_need_to_restart: num()
+  sim_cnvrge: num()
+  min_cut: str()
+  iseed: int()
+  flexible_receptor: bool()
+  total_receptors: int()
+  rec_number: int()
+  rec_group: int()
+  rec_group_option: int()
+  check_strain: bool()
+  total_strain: int()
+  max_strain: int()
